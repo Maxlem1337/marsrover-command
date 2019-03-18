@@ -41,9 +41,9 @@ public class MarsRoverLoggingTest {
         String logs = this.logger.fetchMarsRoverLogs(marsRoverId);
 
         assertThat(logs).isEqualTo(String.format("Logs from Mars Rover {%s}:\n" +
-                "1) [RECV] Move (2,2) -> (2,3) | comment" +
-                "2) [RECV] Move (2,3) -> (2,4) | comment" +
-                "3) [RECV] Move (2,3) -> (2,5) | comment2", marsRoverId.toString()));
+                "1) [RECV] Move | comment" +
+                "2) [RECV] Move | comment" +
+                "3) [RECV] Move | comment2", marsRoverId.toString()));
     }
 
     @Test
@@ -59,13 +59,13 @@ public class MarsRoverLoggingTest {
         String logs = this.logger.fetchMarsRoverLogs(marsRoverId);
 
         assertThat(logs).isEqualTo(String.format("Logs from Mars Rover {%s}:\n" +
-                "1) [RECV] Move (2,2) -> (2,3) | comment" +
-                "2) [RECV] Move (2,3) -> (2,4) | comment" +
-                "3) [RECV] Move (2,3) -> (2,5) | comment2" +
-                "4) [EXEC] Move (2,2) -> (2,3) | comment" +
-                "5) [EXEC] Move (2,3) -> (2,4) | comment" +
-                "6) [EXEC] Move (2,3) -> (2,5) | comment2" +
-                "4) [RECV] Turn Right North -> East", marsRoverId.toString()));
+                "1) [RECV] Move | comment" +
+                "2) [RECV] Move | comment" +
+                "3) [RECV] Move | comment2" +
+                "4) [EXEC] Move | comment" +
+                "5) [EXEC] Move | comment" +
+                "6) [EXEC] Move | comment2" +
+                "7) [RECV] Turn Right", marsRoverId.toString()));
     }
 
 }

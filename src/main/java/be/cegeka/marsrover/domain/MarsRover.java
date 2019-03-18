@@ -22,4 +22,16 @@ public class MarsRover {
         this.location = location;
         this.orientation = orientation;
     }
+
+    public void move() {
+        this.location = new Location(location.getX()+orientation.getOffsetX(), location.getY()+orientation.getOffsetY());
+    }
+
+    public void turnLeft() {
+        this.orientation = orientation.left();
+    }
+
+    public void turnRight() {
+        this.orientation = orientation.right();
+    }
 }
